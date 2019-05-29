@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// //*****Page*****//
+
+// Route::group(['middleware'=>'web'], function(){
+// 	Route::match(['get', 'post'], '/', 'IndexController@execute')->name('home');
+// 	Route::get('/page/{alias}', ['uses'=>'PageController@execute', 'as'=>'page']);
+
+// 	Route::auth();
+// });
+
+
+// //*****Admin*****//
+
+// Route::group(['middleware'=>'auth', 'prefix'=>'admin'], function(){
+	
+// })
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
